@@ -1,5 +1,6 @@
 package linked_list;
 
+import utils.ListNodeHelper;
 import utils.SysLog;
 
 /**
@@ -82,22 +83,23 @@ public class LinkedListSolution {
 	 * 怎么进行测试呢？ 输入一个数组，得到链表head
 	 */
 	public static ListNode generateListNode(int... array) {
-		final int size = null != array ? array.length : -1;
-		if (size < 1) {
-			return null;
-		}
-		ListNode head = new ListNode(array[0]);
-
-		ListNode curr = head;
-		ListNode next = null;
-		for (int i = 1; i < size; i++) {
-			next = new ListNode(array[i]);
-			curr.next = next;
-
-			curr = next;
-			next = null;
-		}
-		return head;
+//		final int size = null != array ? array.length : -1;
+//		if (size < 1) {
+//			return null;
+//		}
+//		ListNode head = new ListNode(array[0]);
+//
+//		ListNode curr = head;
+//		ListNode next = null;
+//		for (int i = 1; i < size; i++) {
+//			next = new ListNode(array[i]);
+//			curr.next = next;
+//
+//			curr = next;
+//			next = null;
+//		}
+//		return head;
+		return ListNodeHelper.generateListNode(array);
 	}
 
 	public static void main(String[] args) {
@@ -118,13 +120,14 @@ public class LinkedListSolution {
 		printListNode(reverse);
 	}
 
-	private static void printListNode(ListNode head) {
-		if (null == head) {
-			SysLog.log("null");
-			return;
-		}
-//		SysLog.log("head  " + head.val);
-//		SysLog.log("head.next  " + head.next.val);
-		SysLog.log("head list  " + head);
+	public static void printListNode(ListNode head) {
+//		if (null == head) {
+//			SysLog.log("null");
+//			return;
+//		}
+////		SysLog.log("head  " + head.val);
+////		SysLog.log("head.next  " + head.next.val);
+//		SysLog.log("head list  " + head);
+		ListNodeHelper.printListNode(head);
 	}
 }
