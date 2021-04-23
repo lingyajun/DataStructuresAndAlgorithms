@@ -31,6 +31,18 @@ public class QuickSort {
 	}
 
 	// 快速排序递归函数，p,r为下标
+	public static void quickSortPub(int[] a, int p, int r) {
+		final int n = null != a ? a.length : 0;
+		if (n <= 1) {
+			return;
+		}
+		if (p < 0 || r >= n || p >= r) {
+			return;
+		}
+		quickSortInternally(a, p, r);
+	}
+
+	// 快速排序递归函数，p,r为下标
 	private static void quickSortInternally(int[] a, int p, int r) {
 		// 终止条件
 		if (p >= r) {
